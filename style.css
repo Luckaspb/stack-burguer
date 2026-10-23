@@ -217,7 +217,7 @@ animation: ingredientDrop 1.6s linear forwards;
 /* Cheddar — encostando na carne */
 .layer-5 {
   --altura: 90px;
-  --largura: 230px;
+  --largura: 215px;
   animation-delay: 4.4s;
 }
 
@@ -238,7 +238,7 @@ animation: ingredientDrop 1.6s linear forwards;
 /* Pão superior */
 .layer-8 {
   --altura: 160px;
-  --largura: 245px;
+  --largura: 230px;
   animation-delay: 7.7s;
 }
 
