@@ -1,0 +1,888 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #11100e;
+  --accent: #ff6728;
+  --white: #f8f3eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100svh;
+  padding: 140px 7% 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  right: -130px;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,103,40,.13),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(65px, 8vw, 135px);
+  line-height: .98;
+  letter-spacing: -2px;
+  margin: 26px 0;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.hero-content p {
+  max-width: 400px;
+  color: #aaa39a;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 45px;
+  padding: 20px 26px;
+  background: var(--accent);
+  color: #111;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: transform .3s, background .3s;
+}
+
+.hero-button:hover {
+  transform: translateY(-4px);
+  background: #ff8957;
+}
+
+/* CENA DO HAMBÚRGUER */
+
+.burger-scene {
+  position: relative;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  perspective-origin: 50% 35%;
+}
+
+.burger-stack {
+  width: min(100%, 530px);
+  height: 430px;
+  position: relative;
+  transform: translateY(-105px) scale(1.85);
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  filter: drop-shadow(
+    0 35px 25px rgba(0,0,0,.55)
+  );
+}
+
+/* INGREDIENTES */
+
+.layer {
+  position: absolute;
+  left: 50%;
+  bottom: var(--altura);
+  width: var(--largura);
+  height: 110px;
+  object-fit: contain;
+
+  opacity: 0;
+  transform: translate(-50%, -650px);
+
+  
+
+animation: ingredientDrop 1.6s linear forwards;
+
+
+  will-change: transform, opacity;
+}
+
+/* ORDEM DE MONTAGEM */
+
+
+/* Pão inferior */
+.layer-1 {
+  --altura: 0px;
+  --largura: 245px;
+  animation-delay: 0s;
+}
+
+/* Alface */
+.layer-2 {
+  --altura: 22px;
+  --largura: 235px;
+  animation-delay: 1.1s;
+}
+
+/* Tomate */
+.layer-3 {
+  --altura: 43px;
+  --largura: 220px;
+  animation-delay: 2.2s;
+}
+
+/* Carne */
+.layer-4 {
+  --altura: 65px;
+  --largura: 235px;
+  animation-delay: 3.3s;
+}
+
+/* Cheddar — encostando na carne */
+.layer-5 {
+  --altura: 90px;
+  --largura: 230px;
+  animation-delay: 4.4s;
+}
+
+/* Cebola */
+.layer-6 {
+  --altura: 112px;
+  --largura: 215px;
+  animation-delay: 5.5s;
+}
+
+/* Bacon */
+.layer-7 {
+  --altura: 135px;
+  --largura: 235px;
+  animation-delay: 6.6s;
+}
+
+/* Pão superior */
+.layer-8 {
+  --altura: 160px;
+  --largura: 245px;
+  animation-delay: 7.7s;
+}
+
+/* QUEDA CINEMATOGRÁFICA */
+
+
+@keyframes ingredientDrop {
+
+  /* Ingrediente suspenso */
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(-58%, -550px, 80px)
+      rotateZ(-14deg)
+      rotateX(12deg)
+      scale(1.08);
+    filter: blur(5px);
+    animation-timing-function: cubic-bezier(.35, 0, .65, 1);
+  }
+
+  /* Queda suave em câmera lenta */
+  35% {
+    opacity: 1;
+    transform:
+      translate3d(-54%, -290px, 45px)
+      rotateZ(-10deg)
+      rotateX(8deg)
+      scale(1.05);
+    filter: blur(1px);
+    animation-timing-function: cubic-bezier(.45, 0, .85, .65);
+  }
+
+  /* Aproximação e aceleração antes do impacto */
+  72% {
+    opacity: 1;
+    transform:
+      translate3d(-51%, -32px, 8px)
+      rotateZ(-5deg)
+      rotateX(3deg)
+      scale(1.01);
+    filter: blur(0);
+    animation-timing-function: cubic-bezier(.15, .7, .3, 1);
+  }
+
+  /* Encosta ligeiramente torto */
+  84% {
+    opacity: 1;
+    transform:
+      translate3d(-49%, 5px, 0)
+      rotateZ(4deg)
+      rotateX(-2deg)
+      scaleY(.98);
+    filter: blur(0);
+    animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+  }
+
+  /* Acomoda e permanece parado */
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(-50%, 0, 0)
+      rotateZ(0deg)
+      rotateX(0deg)
+      scale(1);
+    filter: blur(0);
+  }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 140px;
+    gap: 0;
+  }
+
+  h1 {
+    font-size: clamp(60px, 13vw, 100px);
+  }
+
+  .burger-scene {
+    height: 390px;
+  }
+
+  .burger-stack {
+    width: 530px;
+    max-width: 100%;
+    height: 320px;
+    transform: translateY(-20px) scale(.95);
+  }
+
+  .hero-bottom {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, 0);
+    filter: none;
+  }
+}
+
+/* Montagem cinematográfica mais rápida */
+.layer-1 { animation-delay: 0s; }
+.layer-2 { animation-delay: .4s; }
+.layer-3 { animation-delay: .8s; }
+.layer-4 { animation-delay: 1.2s; }
+.layer-5 { animation-delay: 1.6s; }
+.layer-6 { animation-delay: 2s; }
+.layer-7 { animation-delay: 2.4s; }
+.layer-8 { animation-delay: 2.8s; }
+
+/* CARDÁPIO */
+
+.menu {
+  padding: 110px 7%;
+  background: #15110f;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.menu-header h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(45px, 6vw, 85px);
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.menu-header h2 span {
+  color: var(--accent);
+}
+
+.menu-header p {
+  color: #aaa39a;
+  font-size: 14px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.menu-card {
+  min-width: 0;
+  padding: 20px;
+  background: #211b17;
+  border: 1px solid #ffffff12;
+  transition: transform .3s, border-color .3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+}
+
+
+.menu-image {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: #15110f;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.menu-card:hover .menu-image img {
+  transform: scale(1.08);
+}
+
+.menu-card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+  margin: 15px 0 8px;
+}
+
+.menu-card p {
+  color: #aaa39a;
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 65px;
+}
+
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.menu-card-footer strong {
+  color: var(--accent);
+  font-size: 19px;
+}
+
+.menu-card-footer button {
+  border: none;
+  padding: 12px 15px;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.menu-card-footer button:hover {
+  background: #ff8957;
+}
+
+@media (max-width: 1100px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    padding: 75px 5%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-image {
+    height: 250px;
+  }
+}
+
+/* CATEGORIAS DO CARDÁPIO */
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.menu-tab {
+  padding: 15px 25px;
+  border: 1px solid #ffffff25;
+  background: transparent;
+  color: #f8f3eb;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .3s ease,
+              color .3s ease,
+              border-color .3s ease;
+}
+
+.menu-tab:hover {
+  border-color: #ff6728;
+  color: #ff6728;
+}
+
+.menu-tab.active {
+  background: #ff6728;
+  border-color: #ff6728;
+  color: #111;
+}
+
+/* Esconde os produtos das outras categorias */
+.menu-card[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .menu-tabs {
+    gap: 8px;
+  }
+
+  .menu-tab {
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+}
+
+/* MICROTELA DE MAIONESE */
+
+.maionese-card {
+  position: relative;
+}
+
+
+.maionese-popup {
+  position: fixed;
+  z-index: 9999;
+
+  top: 50%;
+  left: 50%;
+  right: auto;
+
+  transform: translate(-50%, -50%);
+
+  width: min(360px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+
+  padding: 28px;
+  background: #211b17;
+  border: 1px solid #ff6728;
+  border-radius: 16px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, .85);
+}
+
+
+.maionese-popup[hidden] {
+  display: none;
+}
+
+.maionese-popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.maionese-popup h4 {
+  font-family: 'Anton', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+#fechar-maionese {
+  background: transparent;
+  color: #f8f3eb;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.maionese-popup label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  color: #f8f3eb;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.maionese-popup input {
+  accent-color: #ff6728;
+}
+
+.confirmar-maionese {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  border: none;
+  background: #ff6728;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* CARDS MAIS COMPACTOS */
+
+.menu-grid {
+  gap: 16px;
+}
+
+.menu-card {
+  padding: 15px;
+}
+
+.menu-image {
+  height: 190px;
+  margin-bottom: 15px;
+}
+
+.menu-card h3 {
+  font-size: 22px;
+}
+
+.menu-card p {
+  min-height: 55px;
+}
+
+@media (max-width: 600px) {
+  .menu-image {
+    height: 230px;
+  }
+}
+
+/* AJUSTE INDIVIDUAL DAS BEBIDAS */
+
+
+/* LATINHAS */
+.menu-card img[src*="cola-cola"],
+.menu-card img[src*="coca-cola"],
+.menu-card img[src*="guaran"] {
+}
+
+/* LIMONADA */
+.menu-card img[src*="limonada"] {
+}
+
+/* PREENCHER AS FOTOS DAS LATAS E LIMONADA */
+
+.menu-card[data-category="bebidas"] .menu-image img[src*="cola-cola"],
+.menu-card[data-category="bebidas"] .menu-image img[src*="coca-cola"],
+.menu-card[data-category="bebidas"] .menu-image img[src*="guaran"],
+.menu-card[data-category="bebidas"] .menu-image img[src*="limonada"] {
+  transform: none;
+}
+
+/* HERO MOBILE — MINIMALISTA PREMIUM */
+@media (max-width: 600px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 115px 22px 45px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero-content {
+    display: contents;
+  }
+
+  .hero .eyebrow {
+    grid-row: 1;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    grid-row: 2;
+    font-size: clamp(48px, 12vw, 65px);
+    line-height: 1;
+    margin: 18px 0 0;
+  }
+
+  .hero .burger-scene {
+    grid-row: 3;
+    width: 100%;
+    height: 285px;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .hero .burger-stack {
+    width: 100%;
+    max-width: 350px;
+    height: 280px;
+    margin: 0 auto;
+    transform: translateY(-10px) scale(.85);
+  }
+
+  .hero-content p {
+    grid-row: 4;
+    max-width: 100%;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .hero-button {
+    grid-row: 5;
+    justify-self: center;
+    justify-content: center;
+    padding: 17px 22px;
+    gap: 25px;
+  }
+
+  .hero-bottom {
+    display: none;
+  }
+}
+
+/* =========================
+   RODAPÉ — STACK BURGER
+========================= */
+
+.footer {
+  background: #171310;
+  border-top: 1px solid #35271f;
+  padding: 65px 7% 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  padding-bottom: 55px;
+}
+
+.footer-logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 34px;
+  color: #f8f3eb;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.footer-logo span {
+  color: #ff6728;
+}
+
+.footer-brand p {
+  color: #aaa39a;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 90px;
+}
+
+.footer-links > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer-links h3 {
+  color: #ff6728;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: #bdb4aa;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color .3s;
+}
+
+.footer-links a:hover {
+  color: #ff6728;
+}
+
+.footer-bottom {
+  border-top: 1px solid #35271f;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: #81766e;
+  font-size: 11px;
+  letter-spacing: .5px;
+}
+
+/* RODAPÉ RESPONSIVO */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 45px 24px 25px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 35px;
+    padding-bottom: 35px;
+  }
+
+  .footer-logo {
+    font-size: 30px;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   BEBIDAS — FOTOS PROPORCIONAIS
+========================= */
+
+/* Desktop */
+.menu-card[data-category="bebidas"] .menu-image {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.menu-card[data-category="bebidas"] .menu-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+}
+
+
+/* Celular */
+@media (max-width: 600px) {
+  .menu-card[data-category="bebidas"] .menu-image {
+    height: 320px;
+  }
+}
+
+

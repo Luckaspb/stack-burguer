@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACK BURGER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">STACK<span>BURGER.</span></a>
+    <a href="#cardapio" class="nav-link">CARDÁPIO ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+
+      <div class="hero-content">
+        <span class="eyebrow">
+          ARTESANAL • SUCULENTO • INSANO
+        </span>
+
+        <h1>
+          O SABOR<br>
+          EM <span>CAMADAS.</span>
+        </h1>
+
+        <p>
+          Ingredientes de verdade. Combinações absurdas.
+          Um hambúrguer que você nunca vai esquecer.
+        </p>
+
+        <a href="#cardapio" class="hero-button">
+          EXPLORAR CARDÁPIO <span>↗</span>
+        </a>
+      </div>
+
+      <div class="burger-scene">
+        <div class="burger-stack">
+
+          <img class="layer layer-1"
+               src="images/pão.png" alt="">
+
+          <img class="layer layer-2"
+               src="images/alface.png" alt="">
+
+          <img class="layer layer-3"
+               src="images/tomate.png" alt="">
+
+          <img class="layer layer-4"
+               src="images/hambúrguer.png" alt="">
+
+          <img class="layer layer-5"
+               src="images/cheddar.png" alt="">
+
+          <img class="layer layer-6"
+               src="images/cebola.png" alt="">
+
+          <img class="layer layer-7"
+               src="images/bacon.png" alt="">
+
+          <img class="layer layer-8"
+               src="images/pão 1.png" alt="">
+
+        </div>
+
+        <span class="burger-caption">
+          01 / THE ORIGINAL STACK
+        </span>
+      </div>
+
+      <span class="hero-bottom">
+        FEITO PRA QUEM TEM FOME DE VERDADE.
+      </span>
+
+    </section>
+
+    
+
+<section id="cardapio" class="menu">
+
+  <div class="menu-header">
+    <span class="eyebrow">FEITOS PRA MATAR SUA FOME</span>
+    <h2>ESCOLHA SEU <span>FAVORITO.</span></h2>
+    <p>Receitas artesanais. Ingredientes selecionados. Sabor sem limites.</p>
+  </div>
+
+  <!-- CATEGORIAS -->
+  <div class="menu-tabs">
+    <button type="button" class="menu-tab active" data-category="burgers">
+      🍔 BURGERS
+    </button>
+
+    <button type="button" class="menu-tab" data-category="bebidas">
+      🥤 BEBIDAS
+    </button>
+
+    <button type="button" class="menu-tab" data-category="adicionais">
+      🍟 ADICIONAIS
+    </button>
+  </div>
+
+  <div class="menu-grid">
+
+    <!-- HAMBÚRGUERES -->
+
+    <article class="menu-card" data-category="burgers">
+      <div class="menu-image">
+        <img src="images/double-smash.jpg" alt="Double Smash">
+      </div>
+      <h3>DOUBLE SMASH</h3>
+      <p>Dois smash burgers, cheddar e molho especial.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 34,90</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+
+    <article class="menu-card" data-category="burgers">
+      <div class="menu-image">
+        <img src="images/bacon-king.jpg" alt="Bacon King">
+      </div>
+      <h3>BACON KING</h3>
+      <p>Carne artesanal, bacon crocante e cheddar.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 39,90</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+
+    <article class="menu-card" data-category="burgers">
+      <div class="menu-image">
+        <img src="images/fire-burguer.png" alt="Fire Burger">
+      </div>
+      <h3>FIRE BURGER</h3>
+      <p>Blend suculento, queijo, jalapeño e molho picante.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 37,90</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+
+    <article class="menu-card" data-category="burgers">
+      <div class="menu-image">
+        <img src="images/classic-stack.png" alt="Classic Stack">
+      </div>
+      <h3>CLASSIC STACK</h3>
+      <p>Carne artesanal, alface, tomate e queijo cheddar.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 29,90</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+
+    <!-- BEBIDAS -->
+
+    
+<!-- BEBIDAS -->
+
+<article class="menu-card" data-category="bebidas">
+  <div class="menu-image">
+    <img src="images/cola-cola.png" 
+    alt="Coca-Cola">
+  </div>
+  <h3>COCA-COLA</h3>
+  <p>Coca-Cola original, lata de 350ml, bem gelada.</p>
+  <div class="menu-card-footer">
+    <strong>R$ 7,00</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+<article class="menu-card" data-category="bebidas">
+  <div class="menu-image">
+    <img src="images/guaraná-lata.png" alt="Guaraná Antarctica">
+  </div>
+  <h3>GUARANÁ</h3>
+  <p>Guaraná Antarctica, lata de 350ml, bem gelado.</p>
+  <div class="menu-card-footer">
+    <strong>R$ 6,50</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+<article class="menu-card" data-category="bebidas">
+  <div class="menu-image">
+    <img src="images/limonada.png" alt="Limonada natural">
+  </div>
+  <h3>LIMONADA</h3>
+  <p>Preparada com limões frescos e servida com gelo.</p>
+  <div class="menu-card-footer">
+    <strong>R$ 9,90</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+<article class="menu-card" data-category="bebidas">
+  <div class="menu-image">
+    <img src="images/suco-laranja.png" alt="Suco natural de laranja">
+  </div>
+  <h3>SUCO DE LARANJA</h3>
+  <p>Laranjas frescas espremidas na hora, sem conservantes.</p>
+  <div class="menu-card-footer">
+    <strong>R$ 11,90</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+<article class="menu-card" data-category="bebidas">
+  <div class="menu-image">
+    <img src="images/suco-abacaxi.png" alt="Suco de abacaxi com hortelã">
+  </div>
+  <h3>ABACAXI COM HORTELÃ</h3>
+  <p>Suco natural de abacaxi com hortelã fresca e gelo.</p>
+  <div class="menu-card-footer">
+    <strong>R$ 12,90</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+
+    <!-- ADICIONAIS -->
+
+    <article class="menu-card" data-category="adicionais">
+      <div class="menu-image">
+        <img src="images/batata-frita.png" alt="Batata frita">
+      </div>
+      <h3>BATATA FRITA</h3>
+      <p>Porção crocante e douradinha.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 12,90</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+
+    <article class="menu-card" data-category="adicionais">
+      <div class="menu-image">
+        <img src="images/bacon-extra.png" alt="Bacon extra">
+      </div>
+      <h3>BACON EXTRA</h3>
+      <p>Uma dose extra de bacon crocante.</p>
+      <div class="menu-card-footer">
+        <strong>R$ 5,00</strong>
+        <button type="button">PEDIR ↗</button>
+      </div>
+    </article>
+    
+<!-- CHEDDAR EXTRA -->
+<article class="menu-card" data-category="adicionais">
+  <div class="menu-image">
+    <img src="images/cheddar-extra.png" alt="Cheddar extra">
+  </div>
+
+  <h3>CHEDDAR EXTRA</h3>
+  <p>Uma porção generosa de cheddar cremoso para deixar seu burger ainda melhor.</p>
+
+  <div class="menu-card-footer">
+    <strong>R$ 4,50</strong>
+    <button type="button">PEDIR ↗</button>
+  </div>
+</article>
+
+<!-- MAIONESE DA CASA -->
+
+<article class="menu-card maionese-card" data-category="adicionais">
+  <div class="menu-image">
+    <img src="images/maionese.png" alt="Maionese">
+  </div>
+
+  <h3>MAIONESE</h3>
+  <p>Escolha entre três opções de maionese para acompanhar seu pedido.</p>
+
+  <div class="menu-card-footer">
+    <strong>R$ 3,50</strong>
+    <button type="button" id="abrir-maionese">PEDIR ↗</button>
+  </div>
+
+  <!-- MINI JANELA DE PERSONALIZAÇÃO -->
+  <div class="maionese-popup" id="maionese-popup" hidden>
+    <div class="maionese-popup-header">
+      <h4>ESCOLHA SUA MAIONESE</h4>
+      <button type="button" id="fechar-maionese" aria-label="Fechar opções">×</button>
+    </div>
+
+    <label>
+      <input type="radio" name="tipo-maionese" value="Tradicional" checked>
+      Maionese tradicional
+    </label>
+
+    <label>
+      <input type="radio" name="tipo-maionese" value="Da casa">
+      Maionese da casa
+    </label>
+
+    <label>
+      <input type="radio" name="tipo-maionese" value="Verde">
+      Maionese verde
+    </label>
+
+    <button type="button" class="confirmar-maionese" id="confirmar-maionese">
+      CONFIRMAR ESCOLHA ↗
+    </button>
+  </div>
+</article>
+
+  </div>
+</section>
+
+
+  </main>
+  
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">STACK<span>BURGER.</span></a>
+      <p>Feito pra quem tem fome de verdade.</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h3>NAVEGAÇÃO</h3>
+        <a href="#">Início</a>
+        <a href="#cardapio">Cardápio</a>
+      </div>
+
+      <div>
+        <h3>CONTATO</h3>
+        <span>Instagram ↗</span>
+        <span>WhatsApp ↗</span>
+        <span>Localização ↗</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 STACK BURGER. Todos os direitos reservados.</p>
+    <p>DESIGN & DESENVOLVIMENTO • PORTFÓLIO</p>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
